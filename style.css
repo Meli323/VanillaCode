@@ -1,14 +1,49 @@
+.weather-app {
+  width: 500px;
+  margin: 30px auto;
+  padding: 10px;
+  border: 10px solid pink;
+  border-radius: 10px;
+  color: pink;
+}
+
 h1 {
   color: pink;
+  font-size: 60px;
 }
 
-.weather-app {
+.card-body {
+  border-radius: 5px;
+}
+.col-6 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+.weekdays {
   color: pink;
+  font-weight: 300;
 }
 
-.col-sm-3 {
-  width: 1px;
-}
+
+
 li {
-  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 19px;
+  text-align: right;
+}
+
+.video {
+  width: 300px;
+}
+
+.float-right{
+  margin:30px auto;
+  font-size:38px ;
+}
+.form-control shadow-sm{
+  color: pink;
 }
