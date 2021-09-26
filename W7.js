@@ -1,7 +1,15 @@
-       let now = new Date();
-console.log(now);
-console.log(now.getMilliseconds());
-let days = [
+       function formatDate(timestamp){
+    let now = new Date(timestamp);
+    let hours= date.getHours();
+      if(hours<10){
+        minutes='0${hours}';
+    }
+    let minutes= date.getMinutes();
+    if(minutes<10){
+        minutes='0${minutes}';
+    }
+
+    let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -10,32 +18,107 @@ let days = [
   "Friday",
   "Saturday"
 ];
-let day = days[now.getDay()];
-console.log(day);
-console.log(now.getFullYear());
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec"
-];
-let month = months[now.getMonth()];
-console.log(month);
-let year = now.getFullYear();
-let date = now.getDate();
-console.log(date);
-alert(`Today is ${day}, ${month} ${date}, ${year}`);
-function formatDate(day, month, date, year) {
-  let newDate = day + ", " + month + " " + date + ", " + year;
-  return newDate;
+    let day= [days.getDay()];
+    return '${day} ${hours}:${minutes}';
 }
-formatDate("Sunday", "Sep", 19, 2021);
+//location
+function displayTemperature (response){
+    let temperatureElement=document.querySelector("#temperature");
+    let cityElement=document.querySelector("#city");
+    let descriptionElement=document.querySelector("#description");
+    let humidityElement=document.querySelector("#humidity");
+    let windElement=document.querySelector("#wind");
+    let datetimeElement=document.querySelector("#datetime");
+    let iconElement=document.querySelector("icon");
+
+
+    temperatureElement.innerHTML= Math.round
+  (response.data.main.temp);
+  cityElement.innerHTML= response.data.name;
+  descriptionElement.innerHTML= response.data.weather(0).description;
+  humidityElement.innerHTML= response.data.main.humidity;
+  windElement.innerHTML= Math.round(response.data.main.wind.speed);
+  datetimeElement.innerHTML= formatDate(response.data.dt* 1000);
+  
+}
+iconElement.setAttribute("src", Img="https://videos/full-moon.mp4");
+
+
+
+function search(city) {
+let apiKey = "e9d357a0815457214193d378dfb84291";
+let apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric';
+axios.get(apiUrl).then(displayTemperature); 
+}
+
+axios.get(apiUrl).then(displayTemperature); 
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-search");
+    search(cityInputElement.value); 
+}
+
+
+
+
+function displayCelciusTemperature(event) {
+    event.preventDefault();
+    let celciusTemperature = (temperatureElement.innerHTML - 32) * 5/9;
+   let temperatureElement= document.querySelector("#temperature");
+   temperatureElement.innerHTML= Math.round (celciusTemperature);
+} 
+
+function displayFarenheitTemperature(event) {
+    event.preventDefault();
+    let farenheitTemperature = (farenheitTemperature - 32) * 5/9;
+   let temperatureElement= document.querySelector("#temperature");
+   temperatureElement.innerHTML= Math.round (farenheitTemperature);
+} 
+
+
+
+function displayWeatherCondition(response) {
+  let name = response.data.name;
+  let nameElement = document.querySelector("#city");
+  nameElement.innerHTML = name;
+
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${temperature}ºC`;
+
+  document.querySelector("#weather").innerHTML = response.data.weather[0].main;
+}
+
+function displayPositionWeather(response) {}
+
+function findPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "e9d357a0815457214193d378dfb84291";
+  let apiCoordUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  axios.get(apiCoordUrl).then(displayPositionWeather);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findPosition);
+}
+
+let farenheitTemperature=null
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click",displayCelciusTemperature);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click",displayFarenheitTemperature);
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let button = document.querySelector("#current-location-button");
+button.addEventListener("click", getCurrentPosition);
+
+search("New York");
+
 console.log(formatDate(new Date()));
