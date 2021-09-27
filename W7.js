@@ -41,7 +41,10 @@ function displayTemperature (response){
   datetimeElement.innerHTML= formatDate(response.data.dt* 1000);
   
 }
-iconElement.setAttribute("src", Img="https://videos/full-moon.mp4");
+iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
 
 
