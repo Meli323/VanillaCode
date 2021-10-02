@@ -41,6 +41,9 @@ days.forEach(function (day){
 </div>
 ';
 });
+       forecastHTML= forecastHTML + '</div>';
+       forecastElement.innerHTML=forecastHTML;
+}
 //location
 function displayTemperature (response){
     let temperatureElement=document.querySelector("#temperature");
