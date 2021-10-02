@@ -21,6 +21,26 @@
     let day= [days.getDay()];
     return '${day} ${hours}:${minutes}';
 }
+function displayForecast(){
+  let forecastElement=document.querySelector("#forecast");
+let forecastHTML ='<div class="row">';
+let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"];
+days.forEach(function (day){
+  forecastHTML=   
+  forecastHTML + 
+    
+             '  <div class="col-2">
+                <div class="weather-forecast-date"> ${day}</div>
+                <img src="videos/cloud.png.mp4" alt="" width="70" />
+                <div class="weather-forecast-temp"></div>
+                <span class="weather-forecast-temp-max">
+                70°F</span>
+                <span class="weather-forecast-temp-min">
+                55°F</span>
+</div>
+</div>
+';
+});
 //location
 function displayTemperature (response){
     let temperatureElement=document.querySelector("#temperature");
