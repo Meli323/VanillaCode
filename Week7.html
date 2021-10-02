@@ -33,15 +33,33 @@
     </li>
 </ul>
 <div class="row">
+ <div class="container">
+        <div class="weather-app">
+<h1 id="city">
+    New York🗽
+</h1>
+<ul>
+    <li id="datetime">
+        SUNDAY 12:00 PM
+        
+    </li>
+    <li id="description">
+       
+    </li>
+</ul>
+<div class="row">
 <div class="col-6">
 <img src="videos/sunnyonecloud.mp4" class="video"
 class="float-right"/>
 
-<div class="float-right"><strong>74</strong>
+<div class="float-right"><strong></strong>
+    
+    <span class="temperature" id="temperature"></span><span class="units" id="celsius"></a></span>
     <span class="units"> <a href="#" id="farenheit-link">°F</a>|<a href="#" id="celcius-link">°C </a> </span>
 </div>
 </div>
 </div>
+
 
 
 <div class="col-6">
@@ -57,103 +75,47 @@ class="float-right"/>
         </li>
     </ul>
 </div>
-
-</div>
-<div>
-    <span class="temperature" id="temperature"></span><span class="units" id="celsius"></a>
-    </span>
-
-</div>
-</div>
-        <div class="container">
-            <form class="search-form" id="search-form">
-             <img class="weather-icon" id="weather-icon" src="http://openweathermap.org/img/wn/02d@2x.png" alt="">
-                <div class="row justify-content-start">
-                    <div class="col-4">
-                        <input type="search" placeholder="Search for your city.." autofocus="on" autocomplete="on" id="city-input"
-                            class="form-control shadow-sm" />
-                    </div>
-                    <div class="col-2">
-                        <input id="submit" type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
-                    </div>
-                    <span class="col-2">
-                        <button id="current-location-button" class="btn btn-warning w-100" value="Current">
-                            Current</button>
-                </div>
-                <br>
-            </form>
+<div class="container">
+    <form class="search-form" id="search-form">
+        <img class="weather-icon" id="weather-icon" src="http://openweathermap.org/img/wn/02d@2x.png" alt="">
+        <div class="row justify-content-start">
+            <div class="col-6">
+                <input type="search" placeholder="Search for your city.." autofocus="on" autocomplete="on" id="city-input"
+                    class="form-control shadow-sm" />
             </div>
-
-
-
-    
-    <div class="weekdays">
-    <div class="row align-items-start">
-        <div class="col-4">
-            Monday
-            <div class="card" style="width: 15rem;">
-                <img src="videos/gloomy-rain.mp4" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">RAIN </p>
-                </div>
+            <div class="col-4">
+                <input id="submit" type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
             </div>
+            <span class="col-4">
+                <button id="current-location-button" class="btn btn-warning w-100" value="Current">
+                    Current</button>
         </div>
-        <div class="col-4">
-           Tuesday
-        <div class="card" style="width: 15rem;">
-            <img src="videos/partlysunny.mp4" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">SUNSHINE WITH A FEW CLOUDS</p>
-            </div>
-        </div>
-        </div>
-        <div class="col-4">
-           Wednesday
-        <div class="card" style="width: 15rem;">
-            <img src="videos/rainy-cloud.mp4" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">LIGHT RAIN </p>
-                </div>
-        </div>
-        </div>
-                <div class="col-4">
-                    Thursday
-                    <div class="card" style="width: 15rem;">
-                        <img src="videos/sunny.mp4" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">SUNSHINE </p>
-                        </div>
-                    </div>
-                </div>
-                        <div class="col-4">
-                            Friday
-                            <div class="card" style="width: 15rem;">
-                                <img src="videos/sunnyonecloud.mp4" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">PARTLY SUNNY </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            Saturday
-                            <div class="card" style="width: 15rem;">
-                                <img src="videos/partlysunny.mp4" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text"> SUNSHINE WITH A FEW CLOUDS </p>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
-        </div>
+        <br>
+    </form>
     </div>
-        
-    
-    <div>
-        <a href="https://github.com/Meli323/VanillaCode">Open-source code</a> ,by Melisa Menzies
-    
+    <div class="weather-forecast">
+        <div class="row">
+            <div class="col-2">
+                <div class="weather-forecast-date">
+                    Monday
+                </div>
+                <img src="videos/cloud.png.mp4" alt="" width="70" />
+                <div class="weather-forecast-temp"></div>
+                <span class="weather-forecast-temp-max">
+                70°F</span>
+                <span class="weather-forecast-temp-min">
+                55°F</span>
+</div>
+</div>
+</div>
+</div>
 </div>
    
-    <script src="src/W7.js"> </script>
+<script src="src/W7.js"> </script> 
 </body>
 </html>
+
+<small>
+    <a href="https://github.com/Meli323/VanillaCode">Open-source code</a> ,by Melisa Menzies
+<small>
+ 
