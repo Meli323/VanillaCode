@@ -1,14 +1,14 @@
 .weather-app {
-  width: 500px;
+  width: 800px;
   margin: 30px auto;
   padding: 10px;
   border: 10px solid pink;
-  border-radius: 10px;
-  color: pink;
+  border-radius: 20px;
+
+  background: pink;
 }
 
 h1 {
-  color: pink;
   font-size: 60px;
 }
 
@@ -18,15 +18,8 @@ h1 {
 .col-6 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    text-align: left;
+  text-align: left;
 }
-
-.weekdays {
-  color: pink;
-  font-weight: 300;
-}
-
-
 
 li {
   list-style: none;
@@ -40,10 +33,21 @@ li {
   width: 300px;
 }
 
-.float-right{
-  margin:30px auto;
-  font-size:38px ;
+.float-right {
+  margin: 30px auto;
+  font-size: 38px;
 }
-.form-control shadow-sm{
-  color: pink;
+
+.weather-forecast {
+  font-size: 20px;
 }
+.weather-forecast-temp {
+  font-size: 20px;
+}
+.weather-forecast-temp-max {
+  font-size: 16px;
+}
+.weather-forecast-temp-min {
+  font-size: 13px;
+}
+
